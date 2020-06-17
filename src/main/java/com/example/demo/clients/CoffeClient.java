@@ -1,7 +1,8 @@
-package com.example.demo;
+package com.example.demo.clients;
 
-import io.spring.guides.gs_producing_web_service.GetidRequest;
-import io.spring.guides.gs_producing_web_service.GetidResponse;
+import com.example.demo.Constants;
+import com.example.GetidRequest;
+import com.example.GetidResponse;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.springframework.ws.soap.client.core.SoapActionCallback;
 
@@ -12,9 +13,8 @@ public class CoffeClient extends WebServiceGatewaySupport {
         request.setId(id);
         try{
         GetidResponse response = (GetidResponse) getWebServiceTemplate()
-                .marshalSendAndReceive("http://localhost:8080/ws", request,
-                        new SoapActionCallback(
-                                "http://spring.io/guides/gs-producing-web-service/GetidRequest"));
+                .marshalSendAndReceive(Constants.HTTP + Constants.LOCALHOST+"/"+Constants.WS, request,
+                        new SoapActionCallback(Constants.NAMESPACE+"/"+Constants.GET_ID_REQUEST));
             return response;
         }
 catch(NullPointerException e)
@@ -23,5 +23,4 @@ catch(NullPointerException e)
 }
 
     }
-
 }

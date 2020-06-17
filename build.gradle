@@ -63,7 +63,10 @@ bootJar {
 // end::jaxb[]
 
 // tag::dependencies[]
+
+
 dependencies {
+	implementation "org.modelmapper:modelmapper:2.3.5"
 
 	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {

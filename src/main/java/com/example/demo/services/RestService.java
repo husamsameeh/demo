@@ -1,31 +1,34 @@
-package com.example.demo;
+package com.example.demo.services;
 
 //import com.techprimers.spring_boot_soap_example.Coffe;
 
-import io.spring.guides.gs_producing_web_service.Coffe;
+import com.example.Coffe;
+import com.example.demo.data.objects.CoffeeDto;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
+
+
 @org.springframework.stereotype.Service
-public class restService {
+public class RestService {
     private BlockingQueue<Coffe> coffeQueue = new LinkedBlockingQueue<Coffe>();
-    private static restService inst;
-
-    private restService(){
+    private static RestService inst;
+    private RestService(){
     }
-
-    public static restService getInst() {
+    public static RestService getInst() {
         if (inst == null)
         {
-            inst = new restService();
+            inst = new RestService();
         }
         return inst;
     }
 
     public void addCoffe(Coffe coffe)
 {
+
     coffeQueue.add(coffe);
+
 }
 
 public Coffe retriveItem(){

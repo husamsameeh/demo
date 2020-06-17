@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ public class ConsumerService {
 
 
     @Autowired
-    private restService serviceProviderOfRest = restService.getInst();
+    private RestService serviceProviderOfRest;
 
 
     public void consume() {
