@@ -1,4 +1,4 @@
-package com.example.demo.data.layers;
+package com.example.demo.business;
 
 import com.example.demo.data.objects.CoffeeDao;
 import com.example.demo.data.objects.CoffeeDto;
@@ -8,7 +8,7 @@ import org.modelmapper.ModelMapper;
 
 import java.text.ParseException;
 
-public class DataAccess {
+public class DataAcessLayer {
 
     ModelMapper modelMapper = new ModelMapper();
 
@@ -31,8 +31,6 @@ public class DataAccess {
             return null;
         }
         CoffeeDto coffeeDto = modelMapper.map(coffe, CoffeeDto.class);
-        coffeeDto.setType(coffe.getType());
-        coffeeDto.setId(coffe.getId());
         return coffeeDto;
     }
 
@@ -43,8 +41,6 @@ public class DataAccess {
             return null;
         }
         CoffeeDao coffee = modelMapper.map(coffeeDto, CoffeeDao.class);
-        coffee.setType(coffeeDto.getType());
-        coffee.setId(coffeeDto.getId());
         return coffee;
     }
 

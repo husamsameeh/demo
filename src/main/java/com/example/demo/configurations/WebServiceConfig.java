@@ -25,7 +25,6 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         servlet.setTransformWsdlLocations(true);
         return new ServletRegistrationBean(servlet, Constants.WS+"/*");
     }
-
     @Bean(name = Constants.COFFEE)
     public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema countriesSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
@@ -35,10 +34,6 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         wsdl11Definition.setSchema(countriesSchema);
         return wsdl11Definition;
     }
-
-
-
-
     @Bean
     public XsdSchema countriesSchema() {
         return new SimpleXsdSchema(new ClassPathResource(Constants.XSD_FILE));

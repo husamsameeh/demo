@@ -13,6 +13,7 @@ import java.util.List;
 public class DataBase {
     private static DataBase dataBaseInstance = null;
 
+
     private AerospikeClient client;
     private Key key;
 

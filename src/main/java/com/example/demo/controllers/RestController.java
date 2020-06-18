@@ -2,8 +2,7 @@ package com.example.demo.controllers;
 
 import com.example.demo.clients.CoffeClient;
 import com.example.demo.Constants;
-import com.example.demo.data.layers.DataAccess;
-import com.example.demo.data.objects.CoffeeDao;
+import com.example.demo.business.DataAcessLayer;
 import com.example.demo.data.objects.CoffeeDto;
 import com.example.demo.data.storage.DataBase;
 import com.example.demo.services.ConsumerService;
@@ -21,7 +20,7 @@ public class RestController {
     @Autowired
     CoffeClient client;
 
-    DataAccess dataAccess = new DataAccess();
+    DataAcessLayer dataAccess = new DataAcessLayer();
 
     private DataBase db;
 
